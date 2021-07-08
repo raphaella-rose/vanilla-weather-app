@@ -1,0 +1,59 @@
+.weather-app {
+  background-color: #303841;
+  border: 1px solid #303841;
+  border-radius: 5px;
+  margin: 30px auto;
+  max-width: 400px;
+  padding: 20px;
+}
+.search {
+  background-color: #3a4750;
+  border: 1px solid #3a4750;
+  color: #eeeeee;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  margin-top: 20px;
+  width: 300px;
+}
+::placeholder {
+  color: #eeeeee;
+}
+.go-button {
+  background-color: #303841;
+  border: 1px solid #303841;
+  color: #00adb5;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+}
+h1 {
+  color: #00adb5;
+  font-family: "Poppins", sans-serif;
+  font-size: 45px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  max-width: 300px;
+}
+.current-details {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  line-height: 19px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.todays-date {
+  color: #eeeeee;
+}
+.weather-description {
+  color: #00adb5;
+}
+.high-low-temp {
+  color: #00adb5;
+}
+.windspeed {
+  color: #00adb5;
+}
+.humidity {
+  color: #00adb5;
+}
