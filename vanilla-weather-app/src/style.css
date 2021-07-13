@@ -63,8 +63,12 @@ li::first-letter {
 .current-weather {
   text-align: right;
 }
-.icon {
-  font-size: 35px;
+.pic {
+  display: block;
+  margin: 0 auto;
+  position: fixed;
+  top: 500;
+  width: 60px;
 }
 .current-temperature {
   color: #00adb5;
