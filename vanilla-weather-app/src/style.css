@@ -76,11 +76,26 @@ li::first-letter {
   font-size: 60px;
   line-height: 50px;
 }
+.rest {
+  color: #3a4750;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+}
 .unit-selector {
   color: #3a4750;
   float: right;
   font-family: "Poppins", sans-serif;
   font-size: 15px;
+  text-decoration: none;
+}
+.unit-selector .active {
+  color: #00adb5;
+  cursor: default;
+  text-decoration: none;
+}
+.unit-selector .active::hover {
+  text-decoration: none;
 }
 .current-location-button {
   background-color: #3a4750;

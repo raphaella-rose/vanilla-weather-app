@@ -24,7 +24,8 @@ let iconElement = document.querySelector("#icon");
 let maxMinElement = document.querySelector("#max-min-temp");
 let maxTemperature = Math.round(response.data.main.temp_max);
 let minTemperature = Math.round(response.data.main.temp_min);
-temperatureElement.innerHTML = Math.round(response.data.main.temp);
+celciusTemperature = response.data.main.temp;
+temperatureElement.innerHTML = Math.round(celciusTemperature);
 cityElement.innerHTML = response.data.name;
 descriptionElement.innerHTML = response.data.weather[0].description;
 humidityElement.innerHTML = `humidity: ${response.data.main.humidity}%`;
@@ -47,6 +48,31 @@ let cityInputElement = document.querySelector("#location-input");
 search(cityInputElement.value);
 }
 
+function displayFahrenheitTemperature(event) {
+event.preventDefault();
+let fahrenheitTemperature = (celciusTemperature * 9 / 5) + 32;
+let temperatureElement = document.querySelector("#temperature");
+celciusLink.classList.remove("active")
+fahrenheitLink.classList.add("active");
+temperatureElement.innerHTML = Math.round(fahrenheitTemperature)
+}
 
+function displayCelciusTemperature(event) {
+event.preventDefault();
+let temperatureElement = document.querySelector("#temperature");
+celciusLink.classList.add("active")
+fahrenheitLink.classList.remove("active");
+temperatureElement.innerHTML = Math.round(celciusTemperature);
+}
+
+let celciusTemperature = null
 let form = document.querySelector("#search-bar");
 form.addEventListener("submit", handleSubmit);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displayCelciusTemperature);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+search("London")
