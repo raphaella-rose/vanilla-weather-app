@@ -13,6 +13,7 @@ let day = days[date.getDay()];
 return `${day} ${hours}:${minutes}`;
 }
 
+
 function displayTemperature(response) {
 let temperatureElement = document.querySelector("#temperature");
 let cityElement = document.querySelector("#city");

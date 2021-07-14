@@ -76,14 +76,19 @@ li::first-letter {
   font-size: 60px;
   line-height: 50px;
 }
-.rest {
+.fahrenheit {
+  color: #3a4750;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+}
+.celcius {
   color: #3a4750;
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   text-decoration: none;
 }
 .unit-selector {
-  color: #3a4750;
   float: right;
   font-family: "Poppins", sans-serif;
   font-size: 15px;
@@ -112,18 +117,23 @@ li::first-letter {
   background-color: #00adb5;
   border: 1px solid #00adb5;
 }
-.forecast {
+.weather-forecast {
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
   font-weight: 400;
   line-height: 50px;
   list-style: none;
-  margin-top: 15px;
+  margin-top: 40px;
   padding: 0;
+  text-align: left;
 }
 .day {
   color: #eeeeee;
+  font-size: 25px;
 }
 .forecast-temp {
   color: #00adb5;
+  font-size: 13px;
+}
+.icon {
+  font-size: 35px;
 }
