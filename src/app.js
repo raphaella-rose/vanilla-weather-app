@@ -13,7 +13,11 @@ let day = days[date.getDay()];
 return `${day} ${hours}:${minutes}`;
 }
 
-
+function getForecast(coordinates) {
+let apiKey = "e99a6b83a02b9bd00c5d8a973f6c63e0";
+let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(displayForecast);
+}
 function displayTemperature(response) {
 let temperatureElement = document.querySelector("#temperature");
 let cityElement = document.querySelector("#city");
@@ -35,6 +39,12 @@ maxMinElement.innerHTML = `High: ${maxTemperature}° Low: ${minTemperature}°`
 dateElement.innerHTML = formatDate(response.data.dt * 1000);
 iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 iconElement.setAttribute("alt", response.data.weather[0].description);
+
+getForecast(response.data.coord);
+}
+
+function displayForecast(response) {
+console.log(response.data.daily);
 }
 function search(city) {
 let apiKey = "e99a6b83a02b9bd00c5d8a973f6c63e0";
