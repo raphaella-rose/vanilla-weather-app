@@ -13,6 +13,13 @@ let day = days[date.getDay()];
 return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+let date = new Date(timestamp * 1000);
+let day = date.getDay();
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+return days[day];
+}
+
 function getForecast(coordinates) {
 let apiKey = "e99a6b83a02b9bd00c5d8a973f6c63e0";
 let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
@@ -44,8 +51,28 @@ getForecast(response.data.coord);
 }
 
 function displayForecast(response) {
-console.log(response.data.daily);
+let forecast = response.data.daily;
+
+let forecastElement = document.querySelector("#forecast");
+
+let forecastHTML = "";
+forecast.forEach(function(forecastDay, index) {
+if (index <5) {
+forecastHTML  = forecastHTML + 
+ ` <li class="tomorrow">
+    <span class="icon"><img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+    alt=""
+    width=40px />
+    </span> <span class="day">${formatDay(forecastDay.dt)}</span> <strong class="forecast-temp">${Math.round(forecastDay.temp.max)}°</strong> <span class="forecast-temp">${Math.round(forecastDay.temp.min)}°</span>;
+    </li>`;    
 }
+
+})
+
+
+forecastElement.innerHTML = forecastHTML;
+}
+
 function search(city) {
 let apiKey = "e99a6b83a02b9bd00c5d8a973f6c63e0";
 let unit = "metric"
@@ -87,3 +114,4 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 search("London")
+displayForecast();
