@@ -66,10 +66,7 @@ forecastHTML  = forecastHTML +
     </span> <span class="day">${formatDay(forecastDay.dt)}</span> <strong class="forecast-temp">${Math.round(forecastDay.temp.max)}°</strong> <span class="forecast-temp">${Math.round(forecastDay.temp.min)}°</span>
     </li>`;    
 }
-
 })
-
-
 forecastElement.innerHTML = forecastHTML;
 }
 
@@ -86,32 +83,11 @@ let cityInputElement = document.querySelector("#location-input");
 search(cityInputElement.value);
 }
 
-function displayFahrenheitTemperature(event) {
-event.preventDefault();
-let fahrenheitTemperature = (celciusTemperature * 9 / 5) + 32;
-let temperatureElement = document.querySelector("#temperature");
-celciusLink.classList.remove("active")
-fahrenheitLink.classList.add("active");
-temperatureElement.innerHTML = Math.round(fahrenheitTemperature)
-}
 
-function displayCelciusTemperature(event) {
-event.preventDefault();
-let temperatureElement = document.querySelector("#temperature");
-celciusLink.classList.add("active")
-fahrenheitLink.classList.remove("active");
-temperatureElement.innerHTML = Math.round(celciusTemperature);
-}
 
-let celciusTemperature = null
 let form = document.querySelector("#search-bar");
 form.addEventListener("submit", handleSubmit);
 
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", displayCelciusTemperature);
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 search("London")
-displayForecast();
