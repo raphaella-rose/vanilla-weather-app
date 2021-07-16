@@ -13,7 +13,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 20px;
   margin-top: 20px;
-  width: 280px;
+  width: 300px;
 }
 ::placeholder {
   color: #eeeeee;
@@ -64,11 +64,11 @@ li::first-letter {
   text-align: right;
 }
 .pic {
-  display: block;
-  margin: 0 auto;
+  float: left;
   position: relative;
-  top: 500;
-  width: 60px;
+  bottom: 10px;
+  left: 10px;
+  width: 75px;
 }
 .current-temperature {
   color: #00adb5;
@@ -76,46 +76,11 @@ li::first-letter {
   font-size: 60px;
   line-height: 50px;
 }
-.fahrenheit {
-  color: #3a4750;
-  font-family: "Poppins", sans-serif;
-  font-size: 15px;
-  text-decoration: none;
-}
 .celcius {
-  color: #3a4750;
-  font-family: "Poppins", sans-serif;
-  font-size: 15px;
-  text-decoration: none;
-}
-.unit-selector {
+  color: #00adb5;
   float: right;
   font-family: "Poppins", sans-serif;
   font-size: 15px;
-  text-decoration: none;
-}
-.unit-selector .active {
-  color: #00adb5;
-  cursor: default;
-  text-decoration: none;
-}
-.unit-selector .active::hover {
-  text-decoration: none;
-}
-.current-location-button {
-  background-color: #3a4750;
-  border: 1px solid #303841;
-  border-radius: 15%;
-  font-family: "Poppins", sans-serif;
-  font-size: 15px;
-  margin-left: 340px;
-  transition: ease-in-out 200ms;
-  position: relative;
-  bottom: 700;
-}
-.current-location-button:hover {
-  background-color: #00adb5;
-  border: 1px solid #00adb5;
 }
 .weather-forecast {
   font-family: "Poppins", sans-serif;
@@ -132,8 +97,21 @@ li::first-letter {
 }
 .forecast-temp {
   color: #00adb5;
-  font-size: 13px;
+  font-size: 17px;
 }
 .icon {
-  font-size: 35px;
+  font-size: 40px;
+}
+.sign-off {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  text-align: center;
+}
+.code-link {
+  color: grey;
+  text-decoration: none;
+}
+.signature {
+  color: #4d94ec;
+  text-decoration: none;
 }

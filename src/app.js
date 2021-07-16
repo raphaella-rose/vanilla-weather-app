@@ -52,9 +52,7 @@ getForecast(response.data.coord);
 
 function displayForecast(response) {
 let forecast = response.data.daily;
-
 let forecastElement = document.querySelector("#forecast");
-
 let forecastHTML = "";
 forecast.forEach(function(forecastDay, index) {
 if (index > 0 && index <6) {
@@ -83,11 +81,7 @@ let cityInputElement = document.querySelector("#location-input");
 search(cityInputElement.value);
 }
 
-
-
 let form = document.querySelector("#search-bar");
 form.addEventListener("submit", handleSubmit);
-
-
 
 search("London")
